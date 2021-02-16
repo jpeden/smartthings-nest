@@ -110,9 +110,9 @@ func doServer() error {
 	httpOnly := viper.GetBool("http.only")
 	var port uint16
 	if httpOnly {
-		port := viper.GetUint("http.port")
+		port = viper.GetUint("http.port")
 	} else{
-		port := viper.GetUint("https.port")
+		port = viper.GetUint("https.port")
 	}
 	certFile := viper.GetString("https.cert")
 	keyFile := viper.GetString("https.key")
