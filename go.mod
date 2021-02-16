@@ -1,4 +1,4 @@
-module github.com/jake-scott/smartthings-nest
+module github.com/jpeden/smartthings-nest
 
 go 1.15
 
