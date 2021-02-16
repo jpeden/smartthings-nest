@@ -149,7 +149,7 @@ func doServer() error {
 		Handler:      r,
 	}
 
-	logging.Logger(nil).Infof("Serving on port %d", port)
+	logging.Logger(nil).Infof("Servingx on port %d", port)
 	go func() {
 		if http {
 			if err := s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
