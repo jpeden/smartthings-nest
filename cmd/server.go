@@ -107,7 +107,7 @@ func checkRequiredFlags(needFlags ...string) error {
 
 func doServer() error {
 	wait := viper.GetDuration("https.graceful-timeout")
-	http := viper.GetUint("http.only")
+	http := viper.GetBool("http.only")
 	if http {
 		port := viper.GetUint("http.port")
 	} else{
