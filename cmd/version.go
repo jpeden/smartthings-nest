@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/jake-scott/smartthings-nest/version"
+	"github.com/jpeden/smartthings-nest/version"
 )
 
 var (

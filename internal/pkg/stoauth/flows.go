@@ -9,8 +9,8 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/jake-scott/smartthings-nest/generated/models"
-	"github.com/jake-scott/smartthings-nest/internal/pkg/logging"
+	"github.com/jpeden/smartthings-nest/generated/models"
+	"github.com/jpeden/smartthings-nest/internal/pkg/logging"
 	"github.com/pkg/errors"
 )
 

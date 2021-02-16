@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jake-scott/smartthings-nest/internal/pkg/logging"
+	"github.com/jpeden/smartthings-nest/internal/pkg/logging"
 	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
 	apioption "google.golang.org/api/option"

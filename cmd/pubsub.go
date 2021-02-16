@@ -18,11 +18,11 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/jake-scott/smartthings-nest/generated/models"
-	"github.com/jake-scott/smartthings-nest/internal/pkg/logging"
-	"github.com/jake-scott/smartthings-nest/internal/pkg/pubsubapi"
-	"github.com/jake-scott/smartthings-nest/internal/pkg/sdmapi"
-	"github.com/jake-scott/smartthings-nest/internal/pkg/stoauth"
+	"github.com/jpeden/smartthings-nest/generated/models"
+	"github.com/jpeden/smartthings-nest/internal/pkg/logging"
+	"github.com/jpeden/smartthings-nest/internal/pkg/pubsubapi"
+	"github.com/jpeden/smartthings-nest/internal/pkg/sdmapi"
+	"github.com/jpeden/smartthings-nest/internal/pkg/stoauth"
 )
 
 var _pubSubCmdOpts struct {

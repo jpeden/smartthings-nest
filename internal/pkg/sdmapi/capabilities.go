@@ -1,8 +1,8 @@
 package sdmapi
 
 import (
-	"github.com/jake-scott/smartthings-nest/generated/models"
-	"github.com/jake-scott/smartthings-nest/internal/pkg/logging"
+	"github.com/jpeden/smartthings-nest/generated/models"
+	"github.com/jpeden/smartthings-nest/internal/pkg/logging"
 )
 
 //  Convert data to a set of SmartThings device states

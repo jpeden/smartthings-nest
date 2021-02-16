@@ -11,13 +11,13 @@ other integrations with either of those platforms.
 
 From source :
 
-    $ git clone https://github.com/jake-scott/smartthings-nest.git
+    $ git clone https://github.com/jpeden/smartthings-nest.git
     $ cd smartthings-nest
     $ go install
 
 or have Go install it for you :
 
-    $ go get -u github.com/jake-scott/smartthings-nest@v0.0.1
+    $ go get -u github.com/jpeden/smartthings-nest@v0.0.1
 
 The binary will be installed as `$GOPATH/bin/smartthings-nest` (usually ~/go/bin/smartthings-nest).
 

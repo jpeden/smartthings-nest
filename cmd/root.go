@@ -10,7 +10,7 @@ import (
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
 
-	"github.com/jake-scott/smartthings-nest/internal/pkg/logging"
+	"github.com/jpeden/smartthings-nest/internal/pkg/logging"
 )
 
 var (

@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/jake-scott/smartthings-nest/internal/pkg/sdmapi"
+	"github.com/jpeden/smartthings-nest/internal/pkg/sdmapi"
 )
 
 type SdmEvent struct {

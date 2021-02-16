@@ -32,7 +32,7 @@ endif
 
 .PHONY: build
 build: fmtcheck
-	go install -ldflags '-X github.com/jake-scott/smartthings-nest/version.Version=$(MAXVER)'
+	go install -ldflags '-X github.com/jpeden/smartthings-nest/version.Version=$(MAXVER)'
 
 .PHONY: fmtcheck
 fmtcheck:

@@ -9,7 +9,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/jake-scott/smartthings-nest/internal/pkg/logging"
+	"github.com/jpeden/smartthings-nest/internal/pkg/logging"
 	"github.com/pkg/errors"
 )
 

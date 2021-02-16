@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jake-scott/smartthings-nest/internal/pkg/logging"
-	"github.com/jake-scott/smartthings-nest/internal/pkg/sdmapi"
+	"github.com/jpeden/smartthings-nest/internal/pkg/logging"
+	"github.com/jpeden/smartthings-nest/internal/pkg/sdmapi"
 	"github.com/pkg/errors"
 	apioption "google.golang.org/api/option"
 	pubsubv1 "google.golang.org/api/pubsub/v1"

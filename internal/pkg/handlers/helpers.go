@@ -8,7 +8,7 @@ import (
 
 	"github.com/go-openapi/runtime/middleware/header"
 	"github.com/go-openapi/strfmt"
-	"github.com/jake-scott/smartthings-nest/generated/models"
+	"github.com/jpeden/smartthings-nest/generated/models"
 )
 
 // For generated request validation routines

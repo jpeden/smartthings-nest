@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/jake-scott/smartthings-nest/generated/models"
-	"github.com/jake-scott/smartthings-nest/internal/pkg/logging"
-	"github.com/jake-scott/smartthings-nest/internal/pkg/sdmapi"
-	"github.com/jake-scott/smartthings-nest/internal/pkg/stoauth"
+	"github.com/jpeden/smartthings-nest/generated/models"
+	"github.com/jpeden/smartthings-nest/internal/pkg/logging"
+	"github.com/jpeden/smartthings-nest/internal/pkg/sdmapi"
+	"github.com/jpeden/smartthings-nest/internal/pkg/stoauth"
 	"google.golang.org/api/googleapi"
 )
 
