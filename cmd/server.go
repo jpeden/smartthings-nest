@@ -56,7 +56,7 @@ var serverCmd = &cobra.Command{
 func init() {
 	serverCmd.Flags().Uint16Var(&_serverCmdOpts.httpsPort, "https-port", 4343, "HTTP port numbers")
 	serverCmd.Flags().Uint16Var(&_serverCmdOpts.httpPort, "http-port", 8080, "HTTP port numbers")
-	serverCmd.Flags().BoolVar(&_serverCmdOpts.httpPort, "http-only", false, "Use HTTP instead of HTTPS")
+	serverCmd.Flags().BoolVar(&_serverCmdOpts.httpPortOnly, "http-only", false, "Use HTTP instead of HTTPS")
 	serverCmd.Flags().StringVar(&_serverCmdOpts.tlsCertPath, "tls-cert", "", "TLS certificate file")
 	serverCmd.Flags().StringVar(&_serverCmdOpts.tlsKeyPath, "tls-key", "", "TLS key file")
 	serverCmd.Flags().DurationVar(&_serverCmdOpts.gracefulTimeout, "graceful-timeout", time.Second*15, "duration to wait for server to finish, eg. 1m or 10s")
