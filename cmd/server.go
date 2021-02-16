@@ -32,6 +32,8 @@ var _serverCmdOpts struct {
 	writeTimeout            time.Duration
 	googleapiTImeout        time.Duration
 	logRequests             bool
+	httpOnly				bool
+	httpPort				uint16
 }
 
 var serverCmd = &cobra.Command{
@@ -53,6 +55,8 @@ var serverCmd = &cobra.Command{
 
 func init() {
 	serverCmd.Flags().Uint16Var(&_serverCmdOpts.httpsPort, "https-port", 4343, "HTTP port numbers")
+	serverCmd.Flags().Uint16Var(&_serverCmdOpts.httpPort, "http-port", 8080, "HTTP port numbers")
+	serverCmd.Flags().BoolVar(&_serverCmdOpts.httpPort, "http-only", false, "Use HTTP instead of HTTPS")
 	serverCmd.Flags().StringVar(&_serverCmdOpts.tlsCertPath, "tls-cert", "", "TLS certificate file")
 	serverCmd.Flags().StringVar(&_serverCmdOpts.tlsKeyPath, "tls-key", "", "TLS key file")
 	serverCmd.Flags().DurationVar(&_serverCmdOpts.gracefulTimeout, "graceful-timeout", time.Second*15, "duration to wait for server to finish, eg. 1m or 10s")
@@ -65,6 +69,8 @@ func init() {
 	serverCmd.Flags().StringVar(&_serverCmdOpts.smartthingsClientsecret, "smartthings-clientsecret", "", "oauth Client Secret from Smartthings cloud connector 'App Credentials'")
 
 	errPanic(viper.GetViper().BindPFlag("https.port", serverCmd.Flags().Lookup("https-port")))
+	errPanic(viper.GetViper().BindPFlag("http.port", serverCmd.Flags().Lookup("http-port")))
+	errPanic(viper.GetViper().BindPFlag("http.only", serverCmd.Flags().Lookup("http-only")))
 	errPanic(viper.GetViper().BindPFlag("https.cert", serverCmd.Flags().Lookup("tls-cert")))
 	errPanic(viper.GetViper().BindPFlag("https.key", serverCmd.Flags().Lookup("tls-key")))
 	errPanic(viper.GetViper().BindPFlag("https.graceful-timeout", serverCmd.Flags().Lookup("graceful-timeout")))
@@ -101,7 +107,12 @@ func checkRequiredFlags(needFlags ...string) error {
 
 func doServer() error {
 	wait := viper.GetDuration("https.graceful-timeout")
-	port := viper.GetUint("https.port")
+	http := viper.GetUint("http.only")
+	if http {
+		port := viper.GetUint("http.port")
+	} else{
+		port := viper.GetUint("https.port")
+	}
 	certFile := viper.GetString("https.cert")
 	keyFile := viper.GetString("https.key")
 	proj := viper.GetString("google.device-access.project")
@@ -140,8 +151,14 @@ func doServer() error {
 
 	logging.Logger(nil).Infof("Serving on port %d", port)
 	go func() {
-		if err := s.ListenAndServeTLS(certFile, keyFile); err != nil && err != http.ErrServerClosed {
-			logging.Logger(nil).WithError(err).Error("running server")
+		if http {
+			if err := s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+				logging.Logger(nil).WithError(err).Error("running http server")
+			}
+		} else{
+			if err := s.ListenAndServeTLS(certFile, keyFile); err != nil && err != http.ErrServerClosed {
+				logging.Logger(nil).WithError(err).Error("running https server")
+			}
 		}
 	}()
 
